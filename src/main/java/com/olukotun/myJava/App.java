@@ -10,83 +10,90 @@ import java.util.Scanner;
     	{
     	    public static void main( String[] args )
     	    {
-    	    	
-        int[][] first = {{1,2},{4,5}};
-        int[][] second = {{1,2},{2,4}};
         
-        int result[][]=new int[2][2];
+        Scanner scanner = new Scanner(System.in);
         
+        System.out.println("Please enter the number of row of the first matrix : ");
+        int row1 = scanner.nextInt();
         
-//        Scanner input = new Scanner(System.in);
-//        
-//        System.out.println("Please enter the first element of the first matrix ");
-//        
-//        int firstElement = input.nextInt();
-//        first[0][0] = firstElement;
-//        
-//
-//        System.out.println("Please enter the second element of the first matrix ");
-//        
-//        int secondElement = input.nextInt();
-//        first[0][1] =secondElement;
-//        
-//
-//        System.out.println("Please enter the third element of the first matrix ");
-//        
-//        int thirdElement = input.nextInt();
-//        first[1][0] = thirdElement;
-//        
-//        
-//
-//        System.out.println("Please enter the fourth element of the first matrix ");
-//        
-//        int fourthElement = input.nextInt();
-//        first[1][1] = firstElement;
-//        
+        System.out.println("Please enter the column of the first matrix :");
         
+        int col1 = scanner.nextInt();
         
+        System.out.println("Please enter the number of row of the second matrix : ");
+        int row2 = scanner.nextInt();
         
+        System.out.println("Please enter the column of the second matrix :");
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        int col2 = scanner.nextInt();
+       
+        int[][] matrixA = new int[row1][col1];
+        int[][] matrixB = new int[row2][col2];
+        int[][] result1 = new int[row1][col2];
         int sum = 0;
         
-        for (int i=0; i < 2; i++) {
-        	for(int j=0; j<2; j++) {
-        		for(int k=0; k < 2; k++) {
-        			sum= sum + first[i][k] * second[k][j];
+        
+        if(col1==row2) {
+        	for(int i =0; i < row1; i++) {
+        		for(int j=0; j < col1; j++) {
+        			System.out.println("Please enter the " + i + " " + j + " element of matrix A");
+        			int element = scanner.nextInt();
+        			
+        			matrixA[i][j] = element;
         			
         		}
-        		result[i][j]=sum;
-        		
-        		sum=0;
         	}
-        }
-    	         
+        	
+        	
+        	for(int i =0; i < row2; i++) {
+        		for(int j=0; j < col2; j++) {
+        			System.out.println("Please enter the " + i + " " + j + " element of matrix B");
+        			int element = scanner.nextInt();
+        			
+        			matrixB[i][j] = element;
+        			
+        		}
+        	}
+        	
+        	
+        	for (int i=0; i < row1; i++) {
+            	for(int j=0; j<col2; j++) {
+            		for(int k=0; k < col1; k++) {
+            			sum= sum + matrixA[i][k] * matrixB[k][j];
+            			
+            		}
+            		   result1[i][j]=sum;
+            		
+            		   sum=0;
+            	}
+            }
+        	         
 
-    	  for(int i= 0; i < 2; i++) {        
-    		  for(int j=0; j < 2; j++) {
-    			  System.out.print(result[i][j] + " ");
-    		  }
-    		  
-    		  System.out.println();
-    	  }
-    	        
+        	  for(int i= 0; i < row1; i++) {        
+        		  for(int j=0; j < col2; j++) {
+        			  System.out.print(result1[i][j] + " ");
+        		  }
+        		  
+        		  System.out.println();
+        	  }
+        	    
+        	
+        }else {
+        	System.out.println("Please check the dimension of the matrix");
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+ 
+        
+            
     	        
     	        
     	        
