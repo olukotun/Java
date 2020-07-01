@@ -38,7 +38,6 @@ import java.util.Scanner;
         		for(int j=0; j < col1; j++) {
         			System.out.println("Please enter the " + i + " " + j + " element of matrix A");
         			int element = scanner.nextInt();
-        			
         			matrixA[i][j] = element;
         			
         		}
@@ -79,7 +78,7 @@ import java.util.Scanner;
         	    
         	
         }else {
-        	System.out.println("Please check the dimension of the matrix");
+        	System.out.println("Please check the dimension of the matrix you want to multiply ");
         }
         
         
@@ -112,7 +111,7 @@ import java.util.Scanner;
     	    	
     	    }
     	    
-    	    public static void calculateSum() {
+    	    public static void calculateGp() {
 
    	    	 int mathRow = 3;
    	         int mathCol=2;
